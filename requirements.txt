@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+ollama
+langgraph
+langchain
+langchain-community
+qdrant-client
+sentence-transformers
+openai-whisper
+spacy
+presidio-analyzer
+presidio-anonymizer
+pydantic
+python-dotenv
