@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 import ollama
 
+from backend.core.config import settings
+
 app = FastAPI(
     title="Healthcare AI Assistant",
     version="0.1.0"
@@ -24,7 +26,7 @@ def health():
 @app.get("/llm-test")
 def llm_test():
     response = ollama.chat(
-        model="qwen2.5:3b",
+        model=settings.OLLAMA_MODEL,
         messages=[
             {
                 "role": "user",
@@ -34,5 +36,6 @@ def llm_test():
     )
 
     return {
+        "model": settings.OLLAMA_MODEL,
         "response": response["message"]["content"]
     }
